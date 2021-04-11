@@ -77,7 +77,7 @@ namespace Text_Adventure
 
 
 
-            for (int i = 0; i < 79; i++)
+            for (int i = 0; i <= 79; i++)
             {
                 Console.SetCursorPosition(i, 0);
                 Console.WriteLine("~");
