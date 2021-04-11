@@ -121,54 +121,68 @@ namespace Text_Adventure
                 switch (Console.ReadKey(true).Key)
                 {
                     case ConsoleKey.UpArrow:
-                        //remove current character
-                        Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
-                        Console.WriteLine(" ");
+                        //Check if movement is valid
+                        if (Character_Pos_UD > 3)
+                        {
+                            //remove current character
+                            Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
+                            Console.WriteLine(" ");
 
-                        //move character up one
-                        Character_Pos_UD = Character_Pos_UD - 1;
-                        Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
-                        Console.WriteLine("X");
-                        Console.SetCursorPosition(0, 0);
+                            //move character up one
+                            Character_Pos_UD = Character_Pos_UD - 1;
+                            Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
+                            Console.WriteLine("X");
+                            Console.SetCursorPosition(0, 0);
+                        }
 
                         break;
 
                     case ConsoleKey.DownArrow:
-                        //remove current character
-                        Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
-                        Console.WriteLine(" ");
+                        // check if movement is valid
+                        if (Character_Pos_UD < 29)
+                        {
+                            //remove current character
+                            Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
+                            Console.WriteLine(" ");
 
-                        //move character up one
-                        Character_Pos_UD = Character_Pos_UD + 1;
-                        Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
-                        Console.WriteLine("X");
-                        Console.SetCursorPosition(0, 0);
-
+                            //move character up one
+                            Character_Pos_UD = Character_Pos_UD + 1;
+                            Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
+                            Console.WriteLine("X");
+                            Console.SetCursorPosition(0, 0);
+                        }
                         break;
 
                     case ConsoleKey.LeftArrow:
-                        //remove current character
-                        Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
-                        Console.WriteLine(" ");
+                        //Check if movement is valid
+                        if (Character_Pos_LR > 0)
+                        {
+                            //remove current character
+                            Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
+                            Console.WriteLine(" ");
 
-                        //move character up one
-                        Character_Pos_LR = Character_Pos_LR - 1;
-                        Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
-                        Console.WriteLine("X");
-                        Console.SetCursorPosition(0, 0);
-
+                            //move character up one
+                            Character_Pos_LR = Character_Pos_LR - 1;
+                            Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
+                            Console.WriteLine("X");
+                            Console.SetCursorPosition(0, 0);
+                        }
                         break;
 
                     case ConsoleKey.RightArrow:
-                        //remove current character
-                        Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
-                        Console.WriteLine(" ");
+                        //Check if movement is valid
+                        if (Character_Pos_LR < 79)
+                        {
+                            //remove current character
+                            Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
+                            Console.WriteLine(" ");
 
-                        //move character up one
-                        Character_Pos_LR = Character_Pos_LR + 1;
-                        Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
-                        Console.WriteLine("X");
-                        Console.SetCursorPosition(0, 0);
+                            //move character up one
+                            Character_Pos_LR = Character_Pos_LR + 1;
+                            Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
+                            Console.WriteLine("X");
+                            Console.SetCursorPosition(0, 0);
+                        }
                         break;
                 }
             } while (!GameOver);
