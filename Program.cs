@@ -52,6 +52,7 @@ namespace Text_Adventure
                     break;
 
                 case ConsoleKey.D3:
+                    Credits.Begin();
                     break;
 
                 case ConsoleKey.D4:
@@ -188,5 +189,17 @@ namespace Text_Adventure
             } while (!GameOver);
         }
         
+    }
+
+    class Credits
+    {
+        public static void Begin()
+        {
+            Console.Clear();
+            Console.Write("This game was made by me. \nPublished to git at https://github.com/MstrssZ/game-learn-2d-scroll.git \n" +
+                            "Feel free to branch and work on it on your own, or to add issues for more features.\n" +
+                            "have fun");
+            Console.ReadKey(true);
+        }
     }
 }
