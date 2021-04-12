@@ -11,7 +11,7 @@ namespace Text_Adventure
         public static int Character_EXP_Current { get; set; }
         public static int Character_EXP_Full { get; set; }
         public static int Character_LVL { get; set; }
- 
+
         public static string Character_Name { get; set; }
 
 
@@ -37,6 +37,10 @@ namespace Text_Adventure
             Console.ReadKey(true);
             Console.Clear();
 
+        }
+        public static void Title()
+        {
+            Console.Clear();
             Console.Write("What would you like to do?\n" +
                 "1. Play\n" +
                 "2. Options (not implemented yet)\n" +
@@ -200,6 +204,7 @@ namespace Text_Adventure
                             "Feel free to branch and work on it on your own, or to add issues for more features.\n" +
                             "have fun");
             Console.ReadKey(true);
+            Program.Title();
         }
     }
 }
