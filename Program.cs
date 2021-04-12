@@ -11,11 +11,16 @@ namespace Text_Adventure
         public static int Character_EXP_Current { get; set; }
         public static int Character_EXP_Full { get; set; }
         public static int Character_LVL { get; set; }
+        public static int Character_Pos_LR { get; set; }
+        public static int Character_Pos_UD { get; set; }
+        
+        public static bool GameOver { get; set; }
 
         public static string Character_Name { get; set; }
+        public static string Recent_Move_Direction { get; set; }
 
 
-        static void Main(string[] args)
+        static void Main()
         {
             Console.Title = "Text Adventure 0.0";
             Console.WriteLine("Welcome to Text Adventure 0.0");
@@ -36,6 +41,7 @@ namespace Text_Adventure
                 );
             Console.ReadKey(true);
             Console.Clear();
+            Title();
 
         }
         public static void Title()
@@ -107,6 +113,13 @@ namespace Text_Adventure
             //move cursor to top left
             Console.SetCursorPosition(0, 0);
 
+            //init character position
+            
+
+
+
+            
+
             //start game loop
             GameLoop();
 
@@ -117,10 +130,9 @@ namespace Text_Adventure
             int Character_Pos_UD = 10;
             bool GameOver = false;
 
-
-
             Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
             Console.WriteLine("X");
+
             do
             {
                 switch (Console.ReadKey(true).Key)
@@ -134,10 +146,11 @@ namespace Text_Adventure
                             Console.WriteLine(" ");
 
                             //move character up one
-                            Character_Pos_UD = Character_Pos_UD - 1;
+                            Character_Pos_UD --;
                             Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
                             Console.WriteLine("X");
                             Console.SetCursorPosition(0, 0);
+                            Recent_Move_Direction = "n";
                         }
 
                         break;
@@ -151,10 +164,11 @@ namespace Text_Adventure
                             Console.WriteLine(" ");
 
                             //move character up one
-                            Character_Pos_UD = Character_Pos_UD + 1;
+                            Character_Pos_UD ++;
                             Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
                             Console.WriteLine("X");
                             Console.SetCursorPosition(0, 0);
+                            Recent_Move_Direction = "s";
                         }
                         break;
 
@@ -167,10 +181,11 @@ namespace Text_Adventure
                             Console.WriteLine(" ");
 
                             //move character up one
-                            Character_Pos_LR = Character_Pos_LR - 1;
+                            Character_Pos_LR --;
                             Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
                             Console.WriteLine("X");
                             Console.SetCursorPosition(0, 0);
+                            Recent_Move_Direction = "w";
                         }
                         break;
 
@@ -183,14 +198,59 @@ namespace Text_Adventure
                             Console.WriteLine(" ");
 
                             //move character up one
-                            Character_Pos_LR = Character_Pos_LR + 1;
+                            Character_Pos_LR ++;
                             Console.SetCursorPosition(Character_Pos_LR, Character_Pos_UD);
                             Console.WriteLine("X");
                             Console.SetCursorPosition(0, 0);
+                            Recent_Move_Direction = "e";
                         }
+                        break;
+
+                    case ConsoleKey.X:
+                        Attack(Character_Pos_LR, Character_Pos_UD, Recent_Move_Direction);
+
                         break;
                 }
             } while (!GameOver);
+        }
+
+        public static void Attack(int pos_x, int pos_y, string atk_dir)
+        {
+            switch (atk_dir)
+            {
+                case "n":
+                    //check if vaild targetable spot
+                    if (pos_y > 4)
+                    {
+                        Console.SetCursorPosition(pos_x, pos_y - 1);
+                        Console.WriteLine("^");
+                    }
+                    break;
+                case "s":
+                    //check if vaild targetable spot
+                    if (pos_y < 28)
+                    {
+                        Console.SetCursorPosition(pos_x, pos_y + 1);
+                        Console.WriteLine("V");
+                    }
+                    break;
+                case "e":
+                    //check if vaild targetable spot
+                    if (pos_x < 78)
+                    {
+                        Console.SetCursorPosition(pos_x + 1, pos_y);
+                        Console.WriteLine(">");
+                    }
+                    break;
+                case "w":
+                    //check if vaild targetable spot
+                    if (pos_x > 1)
+                    {
+                        Console.SetCursorPosition(pos_x - 1, pos_y);
+                        Console.WriteLine("<");
+                    }
+                    break;
+            }
         }
         
     }
