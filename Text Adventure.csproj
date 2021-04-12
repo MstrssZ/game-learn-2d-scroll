@@ -6,4 +6,8 @@
     <RootNamespace>Text_Adventure</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="bin\Debug\netcoreapp3.1\Text Adventure.exe" />
+  </ItemGroup>
+
 </Project>

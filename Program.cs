@@ -224,6 +224,9 @@ namespace Text_Adventure
                     {
                         Console.SetCursorPosition(pos_x, pos_y - 1);
                         Console.WriteLine("^");
+                        System.Threading.Thread.Sleep(1000);
+                        Console.SetCursorPosition(pos_x, pos_y - 1);
+                        Console.WriteLine(" ");
                     }
                     break;
                 case "s":
@@ -232,6 +235,9 @@ namespace Text_Adventure
                     {
                         Console.SetCursorPosition(pos_x, pos_y + 1);
                         Console.WriteLine("V");
+                        System.Threading.Thread.Sleep(1000);
+                        Console.SetCursorPosition(pos_x, pos_y + 1);
+                        Console.WriteLine(" ");
                     }
                     break;
                 case "e":
@@ -240,6 +246,9 @@ namespace Text_Adventure
                     {
                         Console.SetCursorPosition(pos_x + 1, pos_y);
                         Console.WriteLine(">");
+                        System.Threading.Thread.Sleep(1000);
+                        Console.SetCursorPosition(pos_x + 1, pos_y);
+                        Console.WriteLine(" ");
                     }
                     break;
                 case "w":
@@ -248,6 +257,9 @@ namespace Text_Adventure
                     {
                         Console.SetCursorPosition(pos_x - 1, pos_y);
                         Console.WriteLine("<");
+                        System.Threading.Thread.Sleep(1000);
+                        Console.SetCursorPosition(pos_x - 1, pos_y);
+                        Console.WriteLine(" ");
                     }
                     break;
             }
