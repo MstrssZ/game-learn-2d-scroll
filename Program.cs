@@ -69,7 +69,11 @@ namespace Text_Adventure
                     break;
 
                 default:
+                    Console.Clear();
                     Console.WriteLine("not 1");
+                    Console.WriteLine("Press a key:");
+                    Console.ReadKey(true);
+                    Title();
                     break;
             }
         }
