@@ -70,7 +70,7 @@ namespace Text_Adventure
 
                 default:
                     Console.Clear();
-                    Console.WriteLine("not 1");
+                    Console.WriteLine("not an option given");
                     Console.WriteLine("Press a key:");
                     Console.ReadKey(true);
                     Title();
@@ -269,18 +269,5 @@ namespace Text_Adventure
             }
         }
         
-    }
-
-    class Credits
-    {
-        public static void Begin()
-        {
-            Console.Clear();
-            Console.Write("This game was made by me. \nPublished to git at https://github.com/MstrssZ/game-learn-2d-scroll.git \n" +
-                            "Feel free to branch and work on it on your own, or to add issues for more features.\n" +
-                            "have fun");
-            Console.ReadKey(true);
-            Program.Title();
-        }
     }
 }
